@@ -1,5 +1,11 @@
 // ===== DOM Content Loaded =====
 document.addEventListener('DOMContentLoaded', () => {
+    const observerOptions = {
+        root: null,
+        rootMargin: '0px 0px -10% 0px',
+        threshold: 0.2,
+    };
+
     const animatedItems = document.querySelectorAll('[data-animate]');
     const revealObserver = new IntersectionObserver((entries, observer) => {
         entries.forEach((entry) => {
@@ -15,6 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
         item.style.animationDelay = `${index * 120}ms`;
         revealObserver.observe(item);
     });
+
 
     const projectCards = Array.from(document.querySelectorAll('.project-card'));
     const lightbox = document.getElementById('project-lightbox');
