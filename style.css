@@ -2036,3 +2036,348 @@ body.dark-mode .accreditation strong {
     color: var(--primary-gold);
 }
 /* Custom styles for portfolio */
+/* =========================================
+   GLOBAL
+========================================= */
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+}
+
+.hero-title {
+    text-align: center;
+}
+
+
+/* =========================================
+   TIMELINE
+========================================= */
+
+.timeline {
+    position: relative;
+    padding-left: 30px;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 15px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: #3b82f6;
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.timeline-marker {
+    position: absolute;
+    left: -22px;
+    top: 10px;
+    width: 12px;
+    height: 12px;
+    background: #3b82f6;
+    border-radius: 50%;
+    border: 3px solid white;
+    box-shadow: 0 0 0 2px #3b82f6;
+}
+
+.timeline-content {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+
+/* =========================================
+   SCROLL ANIMATION
+========================================= */
+
+@keyframes fadeInUp {
+
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+.fade-in-up {
+    animation: fadeInUp 0.6s ease-out forwards;
+}
+
+
+/* =========================================
+   HOVER
+========================================= */
+
+.skill-card {
+    transition: transform 0.3s ease;
+}
+
+.skill-card:hover {
+    transform: translateY(-5px);
+}
+
+.project-card {
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+    transform: scale(1.02);
+}
+
+
+/* =========================================
+   LIGHTBOX
+========================================= */
+
+#project-lightbox {
+    transition:
+        opacity 0.3s ease,
+        visibility 0.3s ease;
+}
+
+#project-lightbox.hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+#project-lightbox:not(.hidden) {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+/* =========================================
+   LIGHTBOX ANIMATION
+========================================= */
+
+@keyframes fadeIn {
+
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+
+}
+
+@keyframes fadeOut {
+
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+
+}
+
+@keyframes slideInRight {
+
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+}
+
+@keyframes slideInLeft {
+
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+}
+
+#lightbox-image {
+    transition: opacity 0.4s ease;
+}
+
+#lightbox-image.fade-in {
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+#lightbox-image.fade-out {
+    animation: fadeOut 0.3s ease-in-out;
+}
+
+#lightbox-image.slide-in-right {
+    animation: slideInRight 0.6s ease-in-out;
+}
+
+#lightbox-image.slide-in-left {
+    animation: slideInLeft 0.6s ease-in-out;
+}
+
+
+/* =========================================
+   LIGHTBOX BUTTON
+========================================= */
+
+#lightbox-prev,
+#lightbox-next {
+    cursor: pointer;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+}
+
+#lightbox-prev:hover,
+#lightbox-next:hover {
+    background-color: rgba(0, 0, 0, 0.7) !important;
+}
+
+#slide-counter {
+    cursor: default;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
+
+/* =========================================
+   HERO
+========================================= */
+
+#hero .counter {
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.typing-text {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    text-align: left;
+    padding-left: 0.5rem;
+}
+
+
+/* =========================================
+   FLOATING WINDOW
+========================================= */
+
+@keyframes floaty {
+
+    0% {
+        transform: translateY(0) rotate(-0.2deg);
+    }
+
+    50% {
+        transform: translateY(-10px) rotate(0.2deg);
+    }
+
+    100% {
+        transform: translateY(0) rotate(-0.2deg);
+    }
+
+}
+
+.window.floating {
+    animation: floaty 4.5s ease-in-out infinite;
+}
+
+.window.floating:hover {
+    animation-play-state: paused;
+    transform: none;
+}
+
+
+/* =========================================
+   VALUE
+========================================= */
+
+.value {
+    font-weight: 700;
+    color: var(--accent);
+    font-size: 1.1rem;
+    margin-top: 8px;
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+.foot {
+    text-align: center;
+    color: #7f95ab;
+    margin: 22px 0 60px;
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 768px) {
+
+    .timeline {
+        padding-left: 20px;
+    }
+
+    .timeline-marker {
+        left: -17px;
+    }
+
+}
+
+@media (max-width: 640px) {
+
+    #lightbox-prev,
+    #lightbox-next {
+        width: 36px;
+        height: 36px;
+        font-size: 18px;
+    }
+
+    #lightbox-prev {
+        left: 8px;
+    }
+
+    #lightbox-next {
+        right: 8px;
+    }
+
+}
+
+@media (max-width: 520px) {
+
+    .top h1 {
+        font-size: 1.4rem;
+    }
+
+    .container {
+        gap: 12px;
+    }
+
+}
+
