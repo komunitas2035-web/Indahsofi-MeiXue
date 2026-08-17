@@ -2059,6 +2059,111 @@ body.dark-mode .accreditation strong {
 .back-link{
     color: var(--primary-gold);
 }
+/* Custom styles for portfolio */
+.hero-title{
+    text-align:center;
+}
+body {
+    font-family: 'Inter', sans-serif;
+}
+
+/* Timeline styles */
+.timeline {
+    position: relative;
+    padding-left: 30px;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 15px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: #3b82f6;
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.timeline-marker {
+    position: absolute;
+    left: -22px;
+    top: 10px;
+    width: 12px;
+    height: 12px;
+    background: #3b82f6;
+    border-radius: 50%;
+    border: 3px solid white;
+    box-shadow: 0 0 0 2px #3b82f6;
+}
+
+.timeline-content {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Animation on scroll */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in-up {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+/* Hover effects */
+.skill-card:hover {
+    transform: translateY(-5px);
+}
+
+.project-card:hover {
+    transform: scale(1.02);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .timeline {
+        padding-left: 20px;
+    }
+    
+    .timeline-marker {
+        left: -17px;
+    }
+}
+
+/* Lightbox animations */
+#project-lightbox {
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+#project-lightbox.hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+#project-lightbox:not(.hidden) {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Slide transition animations */
 @keyframes fadeIn {
     from {
         opacity: 0;
