@@ -1,34 +1,6 @@
 // ===== DOM Content Loaded =====
 document.addEventListener('DOMContentLoaded', () => {
-    const observerOptions = {
-        root: null,
-        rootMargin: '0px 0px -10% 0px',
-        threshold: 0.2,
-    };
-
-    const animatedItems = document.querySelectorAll('[data-animate]');
-    const revealObserver = new IntersectionObserver((entries, observer) => {
-        entries.forEach((entry) => {
-            if (!entry.isIntersecting) return;
-            entry.target.classList.add('fade-in-up');
-            entry.target.classList.remove('opacity-0');
-            observer.unobserve(entry.target);
-        });
-    }, observerOptions);
-
-    animatedItems.forEach((item, index) => {
-        item.classList.add('opacity-0');
-        item.style.animationDelay = `${index * 120}ms`;
-        revealObserver.observe(item);
-    });
-
-
-    const projectCards = Array.from(document.querySelectorAll('.project-card'));
-    const lightbox = document.getElementById('project-lightbox');
-    const lightboxImage = document.getElementById('lightbox-image');
-    const lightboxPrev = document.getElementById('lightbox-prev');
-    const lightboxNext = document.getElementById('lightbox-next');
-    const slideCounter = document.getElementById('slide-counter');
+    
 
 // ===== Dark/Light Theme Toggle =====
 const themeToggle = document.getElementById('theme-toggle');
